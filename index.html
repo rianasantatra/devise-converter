@@ -1,22 +1,57 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertisseur de devises</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 </head>
 
 <body>
-    <h1>Convertisseur de devises</h1>
-    <input type="number" id="montant" placeholder="Montant">
-    <select id="devise">
-        <option value="">Euro → Ariary</option>
-        <option value="">Ariary → Euro</option>
-    </select>
-    <button onclick="convertir()">Convertir</button>
-    <p id="resultat"></p>
+    <div class="container">
+        <div class="converter-card">
+            <h1><i class="fas fa-coins"></i> Currency Converter</h1>
+
+            <div class="input-group">
+                <div class="amount-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount" value="1" min="0">
+                </div>
+
+                <div class="currency-group">
+                    <label for="from-currency">From</label>
+                    <select id="from-currency">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+
+                <button id="swap-currencies" class="swap-btn" title="Swap currencies">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="currency-group">
+                    <label for="to-currency">To</label>
+                    <select id="to-currency">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="result-group">
+                <div class="result-amount" id="result">1.00</div>
+                <div class="rate-info" id="rate-info">1 USD = 1 USD</div>
+            </div>
+
+            <button id="convert-btn" class="convert-btn">Convert</button>
+
+            <div class="last-updated" id="last-updated">
+                Rates last updated: Loading...
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
