@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Set default values
-    fromCurrencySelect.value = 'USD';
-    toCurrencySelect.value = 'EUR';
+    fromCurrencySelect.value = 'EUR';
+    toCurrencySelect.value = 'MGA';
   }
 
   // Update conversion result
